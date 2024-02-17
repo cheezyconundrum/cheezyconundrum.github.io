@@ -516,6 +516,7 @@ function level1() {
   // Player wins
   if (player.y < 70 & player2.y < 70 & cheese == 5) {
     moveWallsOffScreen(walls)
+    finalTime = currentTime;
     pressedPlate = true;
     player.vel.x = 0;
     player.vel.y = 0;
@@ -544,8 +545,6 @@ function end() {
   player2.pos = { x: -100, y: -100 };
 
 
-  finalTime = currentTime;
-
   textSize(60);
   textFont(backupFont)
   stroke("black");
@@ -555,5 +554,5 @@ function end() {
   textSize(30);
   strokeWeight(0.3);
   fill("#FFFF66");
-  text("Timmy and Tommy have triumphed over \nthe Cheesy Conundrum, proving that hope and \nteamwork can conquer any challenge. Their \njourney reminds us that with determination, friendship, \nand a dash of cheese, true freedom is possible. \n\nRefresh the page to try and beat ur time!\n You took " + currentTime + " seconds" + "\n It took you " + life + " lives!", width / 2, height / 2 - 120);
+  text("Timmy and Tommy have triumphed over \nthe Cheesy Conundrum, proving that hope and \nteamwork can conquer any challenge. Their \njourney reminds us that with determination, friendship, \nand a dash of cheese, true freedom is possible. \n\nRefresh the page to try and beat ur time!\n You took " + finalTime + " seconds" + "\n It took you " + life + " lives!", width / 2, height / 2 - 120);
 }
